@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html><body>
+<form id="form">
+  Play
+  <input id="code0" type="text" size="40" value="t & t>>8"> and optionally
+  <input id="code1" type="text" size="40" value=""><br>for
+  <input id="duration" type="text" size="2" value="30"> seconds at
+  <input name="samplerate" type="radio" value="8000" checked>8 kHz
+  <input name="samplerate" type="radio" value="11025">11 kHz
+  <input name="samplerate" type="radio" value="22050">22 kHz
+  <input name="samplerate" type="radio" value="32000">32 kHz
+  <input name="samplerate" type="radio" value="44100">44 kHz.
+  The expressions are in 
+  <input name="notation" type="radio" value="JavaScript" checked>JavaScript
+  <input name="notation" type="radio" value="RPN">RPN.
+  <br>Call this tune
+  <input id="title" type="text" size="40">.
+  <br>
+  <input id="play" type="submit" value="Hit it."
+         style="width: 938px; font-size: 120%">
+</form>
+<audio id="player" autoplay="true" controls></audio>
+<p>
+<canvas id="viz" height="256" width="938"></canvas>
+<p id="error" style="color: red">
+<p>Once you've made a new tune, you can save or link to it: <a id="permalink">Untitled</a>.
+<span id="elsewhere"></span>
+<span id="source"></span>
+
+<hr>
+  Try some <a href="examples.html">examples</a>.
+
+  In RPN mode, <a
+  href="http://madgarden.net/apps/glitch-machine/">Glitch Machine</a>
+  expressions should work. For example, <a
+  href="http://wry.me/toys/bytebeat/?code0=t%2010%20%3E%3E%2042%20*%20t%20*&code1=&duration=30&samplerate=8000&notation=RPN&title="><code>t
+  10 >> 42 * t * </code></a>.
+
+  <p>See <a href="http://canonical.org/~kragen/bytebeat/">Kragen Sitaker's
+  overview of bytebeat</a> for an idea of what to do with this web toy
+  by <a href="http://wry.me/blog">Darius Bacon</a>.
+  <a href="https://github.com/darius/bytebeat">Source code</a> on GitHub.
+  Based on <a href="http://www.bemmu.com/music/index.html">Bemmu and
+  viznut's</a>
+  and <a href="http://wurstcaptures.untergrund.net/music/">rarefluid's</a>.
+
+<script src="bytebeat.js"></script>
+<script src="rpn.js"></script>
+<script>
+//'use strict';
+//'
+// Utilities for URLs & DOM, etc.
+
+function dbg(msg) {
+    if (window.console)
+	console.log(msg);
+}
+function byId(id) {
+    return document.getElementById(id);
+}
+
+function decodeParams(url) {
+    var result = {};
+    var qmark = url.indexOf('?');
+    if (0 <= qmark) {
+        var pairs = url.substring(qmark+1, url.length).split('&');
+        for (var i = 0; i < pairs.length; ++i) {
+	    var kv = pairs[i].split('=', 2);
+	    result[decodeURIComponent(kv[0])] = decodeURIComponent(kv[1]);
+        }
+    }
+    return result;
+}
+
+function replaceParams(url, params) {
+    var encoded = [];
+    for (var k in params)
+        if (params.hasOwnProperty(k))
+            encoded.push(encodeURIComponent(k)
+                         + '=' + encodeURIComponent(params[k]));
+    var qmark = url.indexOf('?');
+    var base = qmark < 0 ? url : url.substring(0, qmark);
+    return base + "?" + encoded.join('&');
+}
+
+function getCheckedValue(buttons) {
+    for (var i = 0; i < buttons.length; ++i)
+        if (buttons[i].checked)
+            return buttons[i].value;
+}
+
+function setCheckedValue(buttons, value) {
+    for (var i = 0; i < buttons.length; ++i)
+        if (buttons[i].value == value)
+            buttons[i].checked = true;
+}
+
+
+// Actual page logic
+
+var code0      = byId('code0');
+var code1      = byId('code1');
+var duration   = byId('duration');
+var samplerate = byId('form').samplerate;
+var notation   = byId('form').notation;
+var title      = byId('title');
+var player     = byId('player');
+var viz        = byId('viz');
+var error      = byId('error');
+var permalink  = byId('permalink');
+var elsewhere  = byId('elsewhere');
+var source     = byId('source');
+
+function getFormValues() {
+    return {
+        code0:      code0.value,
+        code1:      code1.value,
+        duration:   duration.value,
+        samplerate: getCheckedValue(samplerate),
+        notation:   getCheckedValue(notation),
+        title:      title.value,
+    };
+}
+
+var defaults = getFormValues();
+
+var params = decodeParams(document.URL);
+if (params.code0)      code0.value = params.code0;
+if (params.code1)      code1.value = params.code1;
+if (params.duration)   duration.value = params.duration;
+if (params.samplerate) setCheckedValue(samplerate, params.samplerate);
+if (params.notation)   setCheckedValue(notation, params.notation);
+if (params.title)      title.value = params.title;
+if (params.source) {
+    source.innerHTML =
+ 'This tune is said to be from <a id="sourcehref" rel="nofollow">here</a>.';
+    // Setting the href separately to avoid XSS issues (I hope) --
+    // presumably there's a better way:
+    byId('sourcehref').href = params.source;
+}
+
+function updatePermalink() {
+    permalink.href = makePermalink();
+    permalink.replaceChild(document.createTextNode(getTitle()),
+                           permalink.childNodes[0]);
+    elsewhere.innerHTML = (
+        getCheckedValue(notation) === 'JavaScript'
+        ? 'Or play it at <a href="'
+            + replaceParams("http://wurstcaptures.untergrund.net/music/",
+                            {oneliner: code0.value,
+                             oneliner2: code1.value,
+                             duration: duration.value,
+                             rate: getCheckedValue(samplerate)})
+            + '">wurstcaptures</a>.'
+        : '');
+}
+
+function makePermalink() {
+    return replaceParams(document.URL, keepChanges(defaults, getFormValues()));
+}
+
+// Return an object with those properties of obj that aren't the same
+// in ref.
+function keepChanges(ref, obj) {
+    var result = {};
+    for (var k in obj)
+        if (obj.hasOwnProperty(k))
+            if (ref[k] !== obj[k])
+                result[k] = obj[k];
+    return result;
+}
+
+function getTitle() {
+    return trim(title.value) || 'Untitled';
+}
+
+function trim(string) {
+    return string.replace(/^\s+|\s+$/g, '');
+}
+
+function updateTitle() {
+    document.title = 'bytebeat.js | ' + getTitle();
+}
+
+if (typeof(player.play) === 'undefined')
+    alert("Your browser doesn't seem to support HTML5 audio. Sorry.");
+
+function play() {
+    error.innerHTML = '';
+    try {
+        function asJS(field) {
+            var text = nonempty(field) ? field.value : '0';
+            return getCheckedValue(notation) === 'RPN' ? jsFromRPN(text) : text;
+        }
+        var composers = [compileComposer(asJS(code0))];
+        if (nonempty(code1)) composers.push(compileComposer(asJS(code1)));
+
+        var seconds = parseFloat(duration.value);
+        if (seconds === 0) seconds = 15;
+
+        var rate = parseInt(getCheckedValue(samplerate));
+
+        showAudioVisual(makeSound(composers, seconds, rate, 1),
+                        player, viz);
+        updatePermalink();
+        updateTitle();
+    } catch (err) {
+        error.innerHTML = '' + err;
+    }
+    return false;
+}
+
+function nonempty(field) {
+    return field.value.match(/\S/);
+}
+
+code0.focus();
+byId('play').onclick = play;
+updatePermalink();
+updateTitle();
+
+</script>
+</body></html>

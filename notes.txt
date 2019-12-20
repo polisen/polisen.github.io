@@ -1,0 +1,2 @@
+/c/desktop.js holds desktop icon config
+/c/programs/demos holds the releases.

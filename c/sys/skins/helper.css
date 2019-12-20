@@ -1,0 +1,60 @@
+/**
+ * windows93 - v0.3.5 - Thu, 15 Jan 2015 13:19:11 GMT
+ * http://www.windows93.net
+ * (w) 2015 WTFPL
+ * by @jankenpopp & @zombectro
+ */
+button{border:1px solid #555;background:#eee}.w93_background{background-color:teal}.w93_desktop{padding:5px}.w93_desktop>.w93_icon{color:#fff;text-shadow:0 1px #000}.w93_taskbar{background-color:silver}.w93_window{padding:2px;background:silver}.w93_window__head{color:#fff;background:navy;margin-bottom:2px}.w93_window__foot{background:silver}.s_inset--deep{background:#fff;border-top:1px solid gray;border-left:1px solid gray;box-shadow:1px 0 #fff,0 1px #fff,1px 1px #fff,inset -1px -1px silver,inset 1px 1px #000}
+/*# sourceMappingURL=helper.css.map *//**
+ * windows93 - v0.3.5 - Thu, 15 Jan 2015 13:19:11 GMT
+ * http://www.windows93.net
+ * (w) 2015 WTFPL
+ * by @jankenpopp & @zombectro
+ */
+
+button {
+    border: 1px solid #555;
+    background: #eee
+}
+
+.w93_background {
+    background-color: teal
+}
+
+.w93_desktop {
+    padding: 5px
+}
+
+.w93_desktop>.w93_icon {
+    color: #fff;
+    text-shadow: 0 1px #000
+}
+
+.w93_taskbar {
+    background-color: silver
+}
+
+.w93_window {
+    padding: 2px;
+    background: silver
+}
+
+.w93_window__head {
+    color: #fff;
+    background: navy;
+    margin-bottom: 2px
+}
+
+.w93_window__foot {
+    background: silver
+}
+
+.s_inset--deep {
+    background: #fff;
+    border-top: 1px solid gray;
+    border-left: 1px solid gray;
+    box-shadow: 1px 0 #fff, 0 1px #fff, 1px 1px #fff, inset -1px -1px silver, inset 1px 1px #000
+}
+
+
+/*# sourceMappingURL=helper.css.map */
