@@ -19,11 +19,44 @@ define([
   //   //,ico:"/c/programs/apps/catExplorer/icon.gif"
   //   , exe: "catex"
   // }, 
-//   {
-//     title: "Explorer"
-//     , ico: "dora"
-//     , exe: "dora --nav --list"
-//   }/*,{
+  {
+    title: "Releases"
+    , ico: "dora"
+    , exe: "dora --nav --list"
+  },
+  {
+    title: "YouTube Video"
+    , ico: "/c/sys/ico32/file.png"
+    , exe: 'anthology'
+  },
+  {
+    title: "Soundcloud"
+    , ico: "/c/sys/ico32/file.png"
+    , exe: 'soundcloud'
+  },
+  {
+    title: "Bandcamp"
+    , ico: "/c/sys/ico32/file.png"
+    , exe: 'bandcamp'
+  },
+  {
+    title: "Araknyl - Bootup.wav"
+    , ico: "/c/sys/ico32/file.png"
+    , url: "/c/programs/demos/MT001/index.html"
+   , width: "600"
+   , height: "400"
+    , help: "MT001"
+  },
+  {
+   title: "Omniself - På Planet.mp3"
+   , ico: "acidBox"
+   , url: "/c/programs/demos/MT002/index.html"
+  , width: "600"
+  , height: "400"
+   , help: "MT002"
+ }
+  
+  /*,{
 //    title: "Terminal"
 //   ,ico:"terminal"
 //   ,exe:"terminal"
@@ -217,21 +250,7 @@ define([
 //     , ico: "/c/sys/ico32/potato.png"
 //     , exe: 'potato'
 //   }, 
-    {
-    title: "ANTHOLOGY"
-    , ico: "/c/sys/ico32/trophy.gif"
-    , exe: 'anthology'
-  },
-  {
-    title: "Soundcloud"
-    , ico: "/c/sys/ico32/trophy.gif"
-    , exe: 'soundcloud'
-  },
-  {
-    title: "Bandcamp"
-    , ico: "/c/sys/ico32/trophy.gif"
-    , exe: 'bandcamp'
-  },
+
 //   , '<br>',
 //   {
 //     title: "Virtual Girl"
@@ -243,22 +262,7 @@ define([
 //     , exe: "hydra"
 //     , arg: "['hi','hydra']"
 //   }, 
-{
-     title: "Araknyl - Bootup.wav"
-     , ico: "acidBox"
-     , url: "/c/programs/demos/MT001/index.html"
-    , width: "600"
-    , height: "400"
-     , help: "MT001"
-   },
-   {
-    title: "Omniself - På Planet.mp3"
-    , ico: "acidBox"
-    , url: "/c/programs/demos/MT002/index.html"
-   , width: "600"
-   , height: "400"
-    , help: "MT002"
-  }
+
    //, {
 //     title: "Arena 93"
 //     , ico: "arena93"

@@ -1,2 +1,6 @@
 /c/desktop.js holds desktop icon config
+
 /c/programs/demos holds the releases.
+
+/c/appbe78.js holds information about the apps /
+    the start menu program tab takes it from what is in appbe78

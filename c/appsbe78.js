@@ -350,7 +350,7 @@ define({
   }*/
 
 
-  ,'bytebeat': {
+  ,'bytebeat2': {
     exec: function(opt) {
       opt = {};//$extend({}, opt);
       opt.title = 'ByteBeat';
