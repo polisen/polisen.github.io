@@ -1016,16 +1016,37 @@ define({
       $window(data);
     }
   }
-  ,"anthology": {
+  ,"youtube": {
     exec: function() {
       var data = {
          url: 'https://www.youtube.com/embed/JL3QV2YbIfU?showinfo=0&amp;autoplay=1;modestbranding=1;controls=0'
         ,icon: '/c/sys/ico32/trophy.gif'
-        ,title: 'ANTHOLOGY'
+        ,title: 'Youtube'
         ,width: 560
         ,height: 315
       };
       $window(data);
+    }
+  }
+  ,"vimeo": {
+    exec: function() {
+      var video = {
+         url: 'https://player.vimeo.com/video/66585192'
+        ,icon: '/c/sys/ico32/trophy.gif'
+        ,title: 'Vimeo'
+        ,width: 560
+        ,height: 315
+      };
+      var sound = {
+        url: "https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/699243286&color=%23ff5500&auto_play=true&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"
+       ,icon: '/c/sys/ico32/trophy.gif'
+       ,title: 'Soundcloud'
+       ,width: 560
+       ,height: 315
+     };
+      $window(video);
+      $window(sound);
+
     }
   }
   ,"soundcloud": {

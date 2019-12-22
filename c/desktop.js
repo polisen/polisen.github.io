@@ -1,16 +1,16 @@
 define([
-  // {
-  //   title: "Terminal"
-  //   , ico: "computer"
-  //   //,exe:"computer"
-  //   , exe: "hello"
-  //   , help: "Type help for help"
-  // }
-  // , '<br>',
+  {
+    title: "Terminal"
+    , ico: "computer"
+    //,exe:"computer"
+    , exe: "hello"
+    , help: "Type help for help"
+  }
+  , '<br>',
   {
     title: "C:/"
     , ico: "hd"
-    , url: "c/"
+    , url: "c/Megatech/"
   }
   , '<br>',
   // {
@@ -19,42 +19,55 @@ define([
   //   //,ico:"/c/programs/apps/catExplorer/icon.gif"
   //   , exe: "catex"
   // }, 
+  // {
+  //   title: "Releases"
+  //   , ico: "dora"
+  //   , exe: "dora --nav --list"
+  // },
+  // {
+  //   title: "YouTube Video"
+  //   , ico: "/c/sys/ico32/gardening/Castle.png"
+  //   , exe: 'youtube'
+  // },
+  // {
+  //   title: "Vimeo Video"
+  //   , ico: "/c/sys/ico32/file2.png"
+  //   , exe: 'vimeo'
+  // },
+  // {
+  //   title: "Soundcloud"
+  //   , ico: "/c/sys/ico32/file2.png"
+  //   , exe: 'soundcloud'
+  // },
+  // {
+  //   title: "Bandcamp"
+  //   , ico: "/c/sys/ico32/file2.png"
+  //   , exe: 'bandcamp'
+  // },
   {
-    title: "Releases"
-    , ico: "dora"
-    , exe: "dora --nav --list"
-  },
-  {
-    title: "YouTube Video"
-    , ico: "/c/sys/ico32/file.png"
-    , exe: 'anthology'
-  },
-  {
-    title: "Soundcloud"
-    , ico: "/c/sys/ico32/file.png"
-    , exe: 'soundcloud'
-  },
-  {
-    title: "Bandcamp"
-    , ico: "/c/sys/ico32/file.png"
-    , exe: 'bandcamp'
-  },
-  {
-    title: "Araknyl - Bootup.wav"
-    , ico: "/c/sys/ico32/file.png"
+    title: "Araknyl - tool 4 hyperforce.wav"
+    , ico: "/c/sys/ico32/file2.png"
     , url: "/c/programs/demos/MT001/index.html"
    , width: "600"
    , height: "400"
     , help: "MT001"
   },
   {
-   title: "Omniself - På Planet.mp3"
-   , ico: "acidBox"
-   , url: "/c/programs/demos/MT002/index.html"
+    title: "Omniself - DreamKeeper.wav"
+    , ico: "/c/sys/ico32/file2.png"
+    , url: "/c/programs/demos/MT002/index.html"
+   , width: "600"
+   , height: "400"
+    , help: "MT001"
+  },
+  {
+   title: "3D Test"
+   , ico: "/c/sys/ico32/games.png"
+   , url: "/c/programs/demos/3D/index.html"
   , width: "600"
   , height: "400"
-   , help: "MT002"
- }
+   , help: "3D Testing"
+ },
   
   /*,{
 //    title: "Terminal"

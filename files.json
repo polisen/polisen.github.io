@@ -1,6 +1,8 @@
 {
     "c": {
-        "Megatech": ["fish.png"],
+        "Megatech": {
+            "MT Capsule 1": "/c/programs/demos/MT001/index.html"
+        },
         "programs": {
             "demos": {
                 "hampsterDance": [
