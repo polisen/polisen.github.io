@@ -237,21 +237,24 @@ textarea:focus::-moz-focus-inner {
     border-color: transparent
 }
 
+/* Clock */
 .skin_inset {
-    border-top: 1px solid gray;
-    border-left: 1px solid gray;
-    box-shadow: 1px 0 #fff, 0 1px #fff, 1px 1px #fff
+    border-top: 1px solid #2b2b2b;
+    border-left: 1px solid #2b2b2b;
+    box-shadow: 1px 0 #777777, 0 1px #777777, 1px 1px #333333
 }
 
 .skin_outset {
     border-top: 1px solid #fff;
     border-left: 1px solid #fff;
-    box-shadow: 1px 0 gray, 0 1px gray, 1px 1px gray
+    box-shadow: 1px 0 gray, 0 1px gray, 1px 1px gray;
 }
 
 .ui_window__body.skin_inset_deep {
     margin-bottom: 1px
 }
+
+
 
 input.invalid,
 input:invalid {
@@ -270,7 +273,7 @@ input[type=button] {
     border-top: 1px solid #fff;
     border-left: 1px solid #fff;
     border-right: 1px solid gray;
-    border-bottom: 1px solid gray;
+    border-bottom: 1px solid red;
     box-shadow: inset 1px 1px #dfdfdf, 1px 0 #000, 0 1px #000, 1px 1px #000;
     margin-right: 1px
 }
@@ -284,13 +287,13 @@ input[type=button],
 .ui_menu--bar .ui_menu__submenu ul,
 .ui_menu--menu ul,
 .ui_menu--menu .ui_menu__submenu ul {
-    border-top: 1px solid #fff;
-    border-left: 1px solid #fff;
-    border-right: 1px solid gray;
-    border-bottom: 1px solid gray;
-    box-shadow: inset 1px 1px #dfdfdf, 1px 0 #000, 0 1px #000, 1px 1px #000;
+    border-top: 1px solid #1F1F1F;
+    border-left: 1px solid #1F1F1F;
+    border-right: 1px solid #282828;
+    border-bottom: 1px solid #282828;
+    box-shadow: inset 1px 1px #070707, 1px 0 #000, 0 1px #000, 1px 1px #000;
     margin-right: 1px;
-    background-color: silver
+    background-color: #191919;
 }
 
 .ui_menu--bar .ui_menu__submenu ul,
@@ -298,8 +301,8 @@ input[type=button],
 .ui_menu--menu .ui_menu__submenu ul,
 .skin_outset_deep,
 .ui_window {
-    border-top: 1px solid silver;
-    border-left: 1px solid silver
+    border-top: 1px solid rgb(0, 0, 0);
+    border-left: 1px solid rgb(2, 0, 0)
 }
 
 .btn:active:not(:disabled),
@@ -322,11 +325,11 @@ button:not(.unstyled).always-pressed,
 input[type=reset].always-pressed,
 input[type=submit].always-pressed,
 input[type=button].always-pressed {
-    border-top: 1px solid #000;
-    border-left: 1px solid #000;
-    border-right: 1px solid #dfdfdf;
-    border-bottom: 1px solid #dfdfdf;
-    box-shadow: inset 1px 1px gray, 1px 0 #fff, 0 1px #fff, 1px 1px #fff
+    border-top: 1px solid #282828;
+    border-left: 1px solid #282828;
+    border-right: 1px solid #000;
+    border-bottom: 1px solid #000;
+    box-shadow: inset 1px 1px #202020, 1px 0 #000, 0 1px #000, 1px 1px #000
 }
 
 .btn:focus,
@@ -386,11 +389,11 @@ input[type=button]:focus::-moz-focus-inner {
     padding-left: 3px;
     padding-top: 3px;
     padding-bottom: 2px;
-    box-shadow: 1px 0 #000, 0 1px #000, 1px 1px #000, inset 1px 1px #fff, 0 0 150px 1px rgba(255, 0, 255, .5)
+    box-shadow: 1px 0 #191919, 0 1px #191919, 1px 1px #191919, inset 1px 1px #191919, 0 0 150px 1px rgba(156, 156, 156, .1)
 }
 
 .ui_window__head {
-    color: #fff;
+    color: #191919;
     padding-top: 2px;
     padding-right: 2px;
     padding-left: 2px;
@@ -403,10 +406,12 @@ input[type=button]:focus::-moz-focus-inner {
 #w93_start span,
 .ui_window__head__title,
 .ui_window_docked__text {
-    padding-left: 5px;
+    padding-left: 15px;
     height: 16px;
     display: inline-block;
     text-align: center;
+    color:white;
+
 }
 
 .ui_explorer--panes__tree .js-resizer {
@@ -417,7 +422,7 @@ input[type=button]:focus::-moz-focus-inner {
 #w93_background,
 .degrade {
     /*background: linear-gradient(to left, #f0f 0, #f0f 100%)*/
-    background: #414551;
+    background: #191919;
 }
 
 .ui_note {
@@ -425,8 +430,8 @@ input[type=button]:focus::-moz-focus-inner {
 }
 
 .ui_menu__separator {
-    border-bottom: 1px solid #fff;
-    background-color: gray
+    border-bottom: 1px solid #282828;
+    background-color: #282828
 }
 
 .ui_terminal {
@@ -518,7 +523,7 @@ code.language-javascript button {
 }
 
 .w93_taskbar {
-    background-color: silver
+    background-color: #1a1a1a;
 }
 
 .w93_taskbar {
@@ -529,13 +534,13 @@ code.language-javascript button {
 .w93_taskbar {
     padding: 2px;
     padding-top: 3px;
-    border-top: 1px solid silver;
-    box-shadow: 0 1px #fff inset
+    border-top: 1px solid #333333;
+    box-shadow: 0 1px #2b2b2b inset
 }
 
 input[type=range] {
     -webkit-appearance: none;
-    background: transparent;
+    background: transpaiconsnt;
     padding: 0;
     margin: 0;
     width: 100%;

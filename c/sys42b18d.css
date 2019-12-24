@@ -346,7 +346,8 @@
      padding-top: 2px;
      width: 30px;
      display: inline-block;
-     cursor: help
+     cursor: help;
+     color: #fff
  }
  
  #w93_dock {
@@ -743,7 +744,7 @@
  }
  
  .ui_menu .ui_menu__item {
-     color: #000;
+     color: #fff;
      margin: 0;
      padding: 3px 23px;
      position: relative;
@@ -857,7 +858,7 @@
  .ui_menu li hr {
      margin: 0;
      border: 0 none;
-     border-top: 1px solid #aaa
+     border-top: 1px solid #282828
  }
  
  .ui_menu label {
