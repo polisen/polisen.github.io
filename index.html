@@ -85,7 +85,7 @@
     </article>
     <footer class="pa0">
       <div class="ui_combo_one w93_taskbar" id="w93_taskbar">
-        <button type="button" id="w93_start"><img width="16" heigth="16" src="c/sys/ico32/logo32.png"><span></button>
+        <button type="button" id="w93_start" ><img width="16" heigth="16" src="c/sys/ico32/logo32.png" style="display:inline-flex; align-items: center;"></button>
         <div id="w93_dock" class="ui_combo_one__main ui_window_dock"></div>
         <div id="w93_notif" class="skin_inset">
           <!-- <a id="w93_feed" target="_blank" href="rss"><img src="c/sys/ico16/love.png" alt="rss feed"></a> -->
@@ -146,12 +146,13 @@
   }());
 
   function logInfo(cb) { 'use strict';
-    $log('windows93 v0.3.5 booting on...');
+    $log('http://megatech.ltd/index.html');
     $log.repeat('=');
     $log($nfo.browser + ' on ' + $nfo.os);
     $log('JavaScript version : ' + $nfo.version);
     $log((new Date).toString());
-
+    $log("                                                                                     *                                ")
+    $log("                                                                   *                                ")
     setTimeout(function() {
       $log.repeat('=');
       $log.obj(window.location);
@@ -517,20 +518,21 @@
       ,settings : function() { $alert('coming soon...')}
     }
     var startmenu = [
-      {name: 'Programs', icon: 'c/sys/ico32/programs.png', items: function() {
-        return menuFromAppsAtlas(scope._apps);
-      }},
-      {name: 'Documents', icon: 'c/sys/ico32/documents.png', items: function() {
-        //return menuFromFileTree(data._tree.c);
-        return menuFromFileTree(scope._files.c, 'c/index.html');
-      }},
-      {name: 'Settings', icon: 'c/sys/ico32/settings.png', action: scope.settings},
-      {name: 'Find', icon: 'c/sys/ico32/find.png', action: actions.find},
-      {name: 'Help', icon: 'c/sys/ico32/help.png', action: actions.help},
-      {name: 'Run...', icon: 'c/sys/ico32/run.png', action: actions.run},
+      // {name: 'Programs', icon: 'c/sys/ico32/programs.png', items: function() {
+      //   return menuFromAppsAtlas(scope._apps);
+      // }},
+      // {name: 'Documents', icon: 'c/sys/ico32/documents.png', items: function() {
+      //   //return menuFromFileTree(data._tree.c);
+      //   return menuFromFileTree(scope._files.c, 'c/index.html');
+      // }},
+      // {name: 'Settings', icon: 'c/sys/ico32/settings.png', action: scope.settings},
+      // {name: 'Find', icon: 'c/sys/ico32/find.png', action: actions.find},
+      // {name: 'Help', icon: 'c/sys/ico32/help.png', action: actions.help},
+      // {name: 'Run...', icon: 'c/sys/ico32/run.png', action: actions.run},
       {name: '---'},
+      
       ///{name: 'Suspend', icon: 'c/sys/ico32/16/app.png'},
-      {name: 'Shutdown...', icon: 'c/sys/ico32/shutdown.png', action: actions.shutdown},
+      {name: 'Reboot', icon: 'c/sys/ico32/shutdown.png', action: actions.shutdown},
       {name: '---'},
       //{name: 'Register', icon: 'c/sys/ico32/shutdown.png', action: scope.register},
       //{name: 'Login', icon: 'c/sys/ico32/shutdown.png', action: scope.login},

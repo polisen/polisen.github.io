@@ -1,18 +1,19 @@
 define([
-  {
-    title: "Terminal"
-    , ico: "computer"
-    //,exe:"computer"
-    , exe: "hello"
-    , help: "Type help for help"
-  }
-  , '<br>',
+  // {
+  //   title: "Terminal"
+  //   , ico: "computer"
+  //   //,exe:"computer"
+  //   , exe: "hello"
+  //   , help: "Type help for help"
+  // }
+  // , '<br>',
   {
     title: "C:/"
-    , ico: "hd"
+    , ico: "/c/sys/ico32/gardening/Bay.png"
     , url: "c/Megatech/"
   }
   , '<br>',
+  '<br>',
   // {
   //   title: "Cat Explorer"
   //   , ico: "nyanexplorer"
@@ -46,28 +47,36 @@ define([
   // },
   {
     title: "Araknyl - tool 4 hyperforce.wav"
-    , ico: "/c/sys/ico32/file2.png"
+    , ico: "/c/sys/ico32/ethernet_icons/01.png"
     , url: "/c/programs/demos/MT001/index.html"
    , width: "600"
    , height: "400"
     , help: "MT001"
   },
   {
-    title: "Omniself - DreamKeeper.wav"
-    , ico: "/c/sys/ico32/file2.png"
+    title: "Omniself-DreamKeeper"
+    , ico: "/c/sys/ico32/ethernet_icons/02.png"
     , url: "/c/programs/demos/MT002/index.html"
    , width: "600"
    , height: "400"
     , help: "MT001"
   },
   {
-   title: "3D Test"
-   , ico: "/c/sys/ico32/games.png"
-   , url: "/c/programs/demos/3D/index.html"
-  , width: "600"
-  , height: "400"
-   , help: "3D Testing"
- },
+    title: "TESTER"
+    , ico: "/c/sys/ico32/ethernet_icons/03.png"
+    , url: "/c/programs/demos/MT003/index.html"
+   , width: "600"
+   , height: "1000"
+    , help: "MT003"
+  },
+//   {
+//    title: "3D Test"
+//    , ico: "/c/sys/ico32/games.png"
+//    , url: "/c/programs/demos/3D/index.html"
+//   , width: "600"
+//   , height: "400"
+//    , help: "3D Testing"
+//  },
   
   /*,{
 //    title: "Terminal"

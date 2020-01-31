@@ -278,6 +278,8 @@ input[type=button] {
     margin-right: 1px
 }
 
+
+/* Detta är bakgrunden till start-menyn */
 .btn,
 button:not(.unstyled),
 input[type=reset],
@@ -294,6 +296,7 @@ input[type=button],
     box-shadow: inset 1px 1px #070707, 1px 0 #000, 0 1px #000, 1px 1px #000;
     margin-right: 1px;
     background-color: #191919;
+    /* background-image: url(https://images.unsplash.com/photo-1538370965046-79c0d6907d47?ixlib=rb-1.2.1&w=1000&q=80); */
 }
 
 .ui_menu--bar .ui_menu__submenu ul,
@@ -408,7 +411,7 @@ input[type=button]:focus::-moz-focus-inner {
 .ui_window_docked__text {
     padding-left: 15px;
     height: 16px;
-    display: inline-block;
+    display: inline-flex;
     text-align: center;
     color:white;
 
@@ -422,7 +425,10 @@ input[type=button]:focus::-moz-focus-inner {
 #w93_background,
 .degrade {
     /*background: linear-gradient(to left, #f0f 0, #f0f 100%)*/
-    background: #191919;
+    background: #000000;
+    /* background: url(https://images.unsplash.com/photo-1538370965046-79c0d6907d47?ixlib=rb-1.2.1&w=1000&q=80);
+    background-size: cover;
+    background-repeat: no-repeat; */
 }
 
 .ui_note {

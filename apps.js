@@ -96,12 +96,12 @@ define({
     }
   }
 
-  ,'terminal': {
-    icon: '/c/sys/ico32/terminal.png',
-    exec: function(cfg) {
-      $terminal(cfg);
-    }
-  }
+  // ,'terminal': {
+  //   icon: '/c/sys/ico32/terminal.png',
+  //   exec: function(cfg) {
+  //     $terminal(cfg);
+  //   }
+  // }
 
   // openers
   /////////////////////////////////////////////////////////////////////////////
