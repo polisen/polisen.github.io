@@ -45,30 +45,30 @@ define([
   //   , ico: "/c/sys/ico32/file2.png"
   //   , exe: 'bandcamp'
   // },
-  {
-    title: "Araknyl - tool 4 hyperforce.wav"
-    , ico: "/c/sys/ico32/ethernet_icons/01.png"
-    , url: "/c/programs/demos/MT001/index.html"
-   , width: "600"
-   , height: "400"
-    , help: "MT001"
-  },
-  {
-    title: "Omniself-DreamKeeper"
-    , ico: "/c/sys/ico32/ethernet_icons/02.png"
-    , url: "/c/programs/demos/MT002/index.html"
-   , width: "600"
-   , height: "400"
-    , help: "MT001"
-  },
-  {
-    title: "TESTER"
-    , ico: "/c/sys/ico32/ethernet_icons/03.png"
-    , url: "/c/programs/demos/MT003/index.html"
-   , width: "600"
-   , height: "1000"
-    , help: "MT003"
-  },
+  // {
+  //   title: "Araknyl - tool 4 hyperforce.wav"
+  //   , ico: "/c/sys/ico32/ethernet_icons/01.png"
+  //   , url: "/c/programs/demos/MT001/index.html"
+  //  , width: "600"
+  //  , height: "400"
+  //   , help: "MT001"
+  // },
+  // {
+  //   title: "Omniself-DreamKeeper"
+  //   , ico: "/c/sys/ico32/ethernet_icons/02.png"
+  //   , url: "/c/programs/demos/MT002/index.html"
+  //  , width: "600"
+  //  , height: "400"
+  //   , help: "MT001"
+  // },
+  // {
+  //   title: "TESTER"
+  //   , ico: "/c/sys/ico32/ethernet_icons/03.png"
+  //   , url: "/c/programs/demos/MT003/index.html"
+  //  , width: "600"
+  //  , height: "1000"
+  //   , help: "MT003"
+  // },
 //   {
 //    title: "3D Test"
 //    , ico: "/c/sys/ico32/games.png"
